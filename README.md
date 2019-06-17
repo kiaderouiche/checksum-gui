@@ -1,6 +1,6 @@
 # checksum-gui
 
-GUI Quick files checksum verified
+GUI Quick files checksum
 
 Installation
 ------------
