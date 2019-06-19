@@ -4,14 +4,14 @@
 
 # Copyright (c) 2019. K.I.A.Derouiche (Algiers, ALGERIA).
 
-# along with this program.  If not, see <https://www.mozilla.org/en-US/MPL/2.0/>.
+#see <https://www.mozilla.org/en-US/MPL/2.0/>.
 
 __nameapp__ = distname = "checksum-gui"
 __author__  = "K.I.A.Derouiche"
 __email__   = "kamel.derouiche@gmail.com"
 __descr__   = "GUI Checksum files and directory."
-__platform__ = [ "NetBSD", "Linux", "FreeBSD", "OpenBSD", "DragonFlyBSD" ]
-__url__      = "https://github.com/kiaderouiche/checksum-tool"
+__platform__ = ["NetBSD", "Linux", "FreeBSD", "OpenBSD", "DragonFlyBSD"]
+__url__      = "https://github.com/kiaderouiche/checksum-gui"
 __license__  = "MPL-2.0"
 __keywords__ = "checksum, md5, sha-1, sha256, sha512"
 __install_requires__ = ["PyQt5"]

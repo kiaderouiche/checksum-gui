@@ -21,12 +21,12 @@ class ChecksumMainWindowApp(QDialog, Ui_Dialog):
         self.initUI()
 
     def initUI(self):
-        self.pushButton.clicked.connect(self.openFilechecksum)
+        self.openFileButton.clicked.connect(self.openFileChecksum)
         self.aboutButton.clicked.connect(self.aboutApp)
-        self.pushButton_2.clicked.connect(self.quitApp)
+        self.closeButton.clicked.connect(self.quitApp)
 
     @pyqtSlot()
-    def openFilechecksum(self):
+    def openFileChecksum(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         fileName, _ = QFileDialog.getOpenFileName(self, "Open file", "", "", options=options)
@@ -35,14 +35,14 @@ class ChecksumMainWindowApp(QDialog, Ui_Dialog):
 
     @pyqtSlot()
     def getCheckFileSum(self, filname):
-        self.lineEdit.setText(str(filname))
-        self.lineEdit.setReadOnly(True)
+        self.lineEdit_SelectFile.setText(str(filname))
+        self.lineEdit_SelectFile.setReadOnly(True)
 
         sumvalue = self.checkFileSum(filname, blocksize=65536)
-        self.lineEdit_2.setText(sumvalue)
-        self.lineEdit_2.setReadOnly(True)
+        self.lineEdit_ChecksumValue.setText(sumvalue)
+        self.lineEdit_ChecksumValue.setReadOnly(True)
 
-        self.lineEdit_4.textChanged.connect(self.onChanged)
+        self.lineEdit_ChecksumCmp.textChanged.connect(self.onChanged)
 
     @pyqtSlot()
     def checkFileSum(self, filname, blocksize) -> str:
@@ -53,7 +53,7 @@ class ChecksumMainWindowApp(QDialog, Ui_Dialog):
         return hash.hexdigest()
 
     def onChanged(self, svalue):
-        textValue = self.lineEdit_2.text()
+        textValue = self.lineEdit_ChecksumValue.text()
         if svalue == textValue:
             self.label_4.setStyleSheet('color: green')
             self.label_4.setText("IDENTICAL")

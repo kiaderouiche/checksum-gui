@@ -45,7 +45,7 @@
     <string>Select file to compute MD5 checksum:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="openFileButton">
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -58,7 +58,7 @@
     <string>Browser</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineEdit_SelectFile">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -81,7 +81,7 @@
     <string>MD5 checksum Value:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="lineEdit_ChecksumValue">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -104,7 +104,7 @@
     <string>Compare MD5-Value:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="lineEdit_ChecksumCmp">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -170,7 +170,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -202,6 +202,30 @@
     </item>
     <item>
      <widget class="QLineEdit" name="lineEdit_FileSize"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>110</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QProgressBar" name="progressBarChecksum">
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
