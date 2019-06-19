@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>checksum-tool</string>
+   <string>checksum-gui</string>
   </property>
   <widget class="QWidget" name="horizontalLayoutWidget_4">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>380</y>
-     <width>211</width>
+     <width>225</width>
      <height>41</height>
     </rect>
    </property>
@@ -26,7 +26,7 @@
     <item>
      <widget class="QPushButton" name="aboutButton">
       <property name="text">
-       <string>A propos de checksum-tool</string>
+       <string>A propos de checksum-gui</string>
       </property>
      </widget>
     </item>
@@ -36,20 +36,20 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>60</y>
-     <width>261</width>
+     <y>40</y>
+     <width>281</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Select file to compute MD5 checksum</string>
+    <string>Select file to compute MD5 checksum:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>520</x>
-     <y>50</y>
+     <y>30</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -62,7 +62,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>90</y>
+     <y>70</y>
      <width>611</width>
      <height>33</height>
     </rect>
@@ -72,20 +72,20 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>160</y>
-     <width>151</width>
+     <y>170</y>
+     <width>161</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>MD5 checksum Value</string>
+    <string>MD5 checksum Value:</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>190</y>
+     <y>200</y>
      <width>541</width>
      <height>33</height>
     </rect>
@@ -95,20 +95,20 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>280</y>
-     <width>151</width>
+     <y>300</y>
+     <width>161</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Compare MD5-Value</string>
+    <string>Compare MD5-Value:</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_4">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>310</y>
+     <y>330</y>
      <width>541</width>
      <height>31</height>
     </rect>
@@ -118,7 +118,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>240</y>
+     <y>250</y>
      <width>611</width>
      <height>41</height>
     </rect>
@@ -138,7 +138,7 @@
      </spacer>
     </item>
     <item>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="label_Result">
       <property name="font">
        <font>
         <family>Verdana</family>
@@ -182,6 +182,28 @@
    <property name="text">
     <string>Close</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>371</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>File size:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_FileSize"/>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
