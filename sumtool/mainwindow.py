@@ -4,7 +4,7 @@
 __author__ = "K.I.A.Derouiche"
 __author_email__ = "kamel.derouiche@gmail.com"
 
-
+import pathlib
 import hashlib
 
 from PyQt5.QtCore import pyqtSlot
@@ -38,11 +38,23 @@ class ChecksumMainWindowApp(QDialog, Ui_Dialog):
         self.lineEdit_SelectFile.setText(str(filname))
         self.lineEdit_SelectFile.setReadOnly(True)
 
+        _filesum = pathlib.Path(filname)
+        if _filesum.is_file():
+            __filesum = self.convertbyes(_filesum.stat().st_size)
+            self.lineEdit_FileSize.setReadOnly(True)
+            self.lineEdit_FileSize.setText("%s" % __filesum)
+        
         sumvalue = self.checkFileSum(filname, blocksize=65536)
         self.lineEdit_ChecksumValue.setText(sumvalue)
         self.lineEdit_ChecksumValue.setReadOnly(True)
 
         self.lineEdit_ChecksumCmp.textChanged.connect(self.onChanged)
+
+    def convertbyes(self, num):
+        for x in ['bytes', 'KB', 'MB', 'Go', 'To']:
+            if num < 1024.0:
+                return "%3.1f %s" % (num, x)
+            num /= 1024.0
 
     @pyqtSlot()
     def checkFileSum(self, filname, blocksize) -> str:
@@ -55,11 +67,11 @@ class ChecksumMainWindowApp(QDialog, Ui_Dialog):
     def onChanged(self, svalue):
         textValue = self.lineEdit_ChecksumValue.text()
         if svalue == textValue:
-            self.label_4.setStyleSheet('color: green')
-            self.label_4.setText("IDENTICAL")
+            self.label_Result.setStyleSheet('color: green')
+            self.label_Result.setText("IDENTICAL")
         else:
-            self.label_4.setStyleSheet('color: red')
-            self.label_4.setText("Not IDENTICAL")
+            self.label_Result.setStyleSheet('color: red')
+            self.label_Result.setText("Not IDENTICAL")
 
     @pyqtSlot()
     def aboutApp(self):

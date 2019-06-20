@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './sumtool/ui/uimain.ui'
+# Form implementation generated from reading ui file 'sumtool/ui/uimain.ui'
 #
-# Created by: PyQt5 UI code generator 5.12.2
+# Created by: PyQt5 UI code generator 5.9.2
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -81,6 +80,8 @@ class Ui_Dialog(object):
         self.lineEdit_FileSize = QtWidgets.QLineEdit(self.horizontalLayoutWidget_2)
         self.lineEdit_FileSize.setObjectName("lineEdit_FileSize")
         self.horizontalLayout_2.addWidget(self.lineEdit_FileSize)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem2)
         self.horizontalLayoutWidget_3 = QtWidgets.QWidget(Dialog)
         self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(400, 110, 231, 51))
         self.horizontalLayoutWidget_3.setObjectName("horizontalLayoutWidget_3")
@@ -91,7 +92,9 @@ class Ui_Dialog(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.progressBarChecksum.setFont(font)
-        self.progressBarChecksum.setProperty("value", 24)
+        self.progressBarChecksum.setProperty("value", 0)
+        self.progressBarChecksum.setTextVisible(True)
+        self.progressBarChecksum.setInvertedAppearance(False)
         self.progressBarChecksum.setObjectName("progressBarChecksum")
         self.horizontalLayout_3.addWidget(self.progressBarChecksum)
 
@@ -108,8 +111,7 @@ class Ui_Dialog(object):
         self.label_3.setText(_translate("Dialog", "Compare MD5-Value:"))
         self.closeButton.setText(_translate("Dialog", "Close"))
         self.label_4.setText(_translate("Dialog", "File size:"))
-
-
+        self.progressBarChecksum.setFormat(_translate("Dialog", "%p%"))
 
 
 if __name__ == "__main__":
@@ -120,3 +122,4 @@ if __name__ == "__main__":
     ui.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec_())
+
