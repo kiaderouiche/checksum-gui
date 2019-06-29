@@ -19,3 +19,4 @@ Dependencies
 
 - Python (>= 3.7)
 - PyQt5
+- qtawesome
